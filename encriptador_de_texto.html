@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body> 
+  
+  <h1> 
+      Código secreto.
+  </h1> 
+  
+  <h4>
+  Nota: Favor ingresar solo textos en minusculas y sin carácteres especiales
+  </h4>
+
+  <label for="mensajeIntroducido">Mensaje a encriptar: </label>
+  <textarea class="text" id="mensajeIntroducido" placeholder= "Escriba su mensaje aquí."></textarea>
+
+  <br><br>
+
+  <button type="button"  onclick="encriptar()"> 
+      Encriptar 
+  </button> 
+
+  <button type="button"  onclick="Desencriptar()"> 
+      Desencriptar
+  </button> 
+  
+  <br><br><br>
+
+  <label for="valueInput">Resultado: </label>
+  <textarea class="text" id="valueInput"placeholder= "********"></textarea> 
+
+  <p id="valueInput"></p> 
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  <footer class="text-center footer-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+                <h3>ALURA LATAM - ORACLE</h3>
+                <p>
+                    Hecho por: <br />
+                    Juan Carlos Melo Guzmán
+                </p>
+            </div>
+            <div class="col-md-4 footer-col">
+                <h3>Contacto: </h3>
+                <ul class="list-inline">
+                    <li>
+                        <a  target="_blank" href="https://www.facebook.com/Juan.Carlos.Melo.Guzman/" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                    </li>
+                    <li>
+                        <a  target="_blank" href="https://www.linkedin.com/in/juan-carlos-melo-guzm%C3%A1n-3850b8221/" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i>Likedin</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-col">
+                <p>Lo que con mucho trabajo se adquiere, más se ama. "Aristoteles"</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+  <script> 
+
+    function  convertirMayusculas(){
+
+      }
+
+    function encriptar(){
+
+        var msjEncrypt = document.getElementById("mensajeIntroducido").value
+
+        .replace(/a/gm, "ai")
+        .replace(/e/gm, "enter")
+        .replace(/i/gm, "imes")
+        .replace(/o/gm, "ober")
+        .replace(/u/gm, "ufat");
+
+        document.getElementById("valueInput").innerHTML = msjEncrypt;
+      }
+
+      function Desencriptar(){
+
+        var msjDesencrypt = document.getElementById("mensajeIntroducido").value
+        .replace(/ai/gm, "a")
+        .replace(/enter/gm, "e")
+        .replace(/imes/gm, "i")
+        .replace(/ober/gm, "o")
+        .replace(/ufat/gm, "u");
+
+        document.getElementById("valueInput").innerHTML = msjDesencrypt;
+      }
+  </script> 
+</body> 
+  
+</html> 
